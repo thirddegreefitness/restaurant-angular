@@ -1,0 +1,184 @@
+// ==========================================================
+
+// 320 and Up by Andy Clarke
+// Version: 3.0
+// URL: http://stuffandnonsense.co.uk/projects/320andup/
+// Apache License: v2.0. http://www.apache.org/licenses/LICENSE-2.0
+
+// ==========================================================
+
+/* Mixins =================================================== */
+
+// 1. ROOT 					==============================
+// 2. TYPOGRAPHY 			==============================
+
+@mixin headline() {
+  text-transform: uppercase;
+  font-weight: 700;
+  color: $grey;
+  @include rem(letter-spacing, 5/10);
+}
+
+@mixin rem($property, $sizeValue: 1.6) {
+  #{$property}: ($sizeValue * 10) + px;
+  #{$property}: $sizeValue + rem;
+}
+
+// @include rem-size(property, PX Value / 10);
+
+@mixin text-overflow() {
+    overflow : hidden;
+    text-overflow : ellipsis;
+    white-space : nowrap;
+}
+
+// Chrome Frame
+
+@mixin chromeframe() {
+    margin : .2em 0;
+    background : $lightgrey;
+    color : $black;
+    padding : .2em 0;
+}
+
+// Contain floats
+
+@mixin flexbox {
+    display: -webkit-box;
+    -webkit-box-align: center;
+    -webkit-box-pack: center;
+     
+    display: -moz-box;
+    -moz-box-align: center;
+    -moz-box-pack: center;
+     
+    display: -ms-flexbox;
+    -ms-flex-align: center;
+    -ms-flex-pack: center;
+     
+    display: box;
+    box-align: center;
+    box-pack: center;
+}
+
+@mixin flexbox-center {
+  display: -webkit-box;      /* OLD - iOS 6-, Safari 3.1-6 */
+  display: -moz-box;         /* OLD - Firefox 19- (buggy but mostly works) */
+  display: -ms-flexbox;      /* TWEENER - IE 10 */
+  display: -webkit-flex;     /* NEW - Chrome */
+  display: flex; 
+  -webkit-align-items: center;
+  align-items: center;
+  -webkit-justify-content: center;
+  justify-content: center;
+  -webkit-align-content: center;
+  align-content: center;
+}
+
+@mixin clearfix {
+*zoom : 1;
+&:before,
+&:after {
+display: table;
+content : ""; }
+&:after {
+clear : both; } }
+
+.clearfix {
+@include clearfix; }
+
+// Vertical Align
+
+@mixin filter-bar {
+  display: block;
+  width: 100%;
+  background-color: $middle-grey;
+  height: auto;
+  @include rem(min-height, 50/10);
+  @include rem(padding-left, 24/10);
+  color: $white;
+  ul {
+    @include rem(padding-top, 16/10);
+  }
+  ul li {
+    color: $white;
+    display: inline;
+    @include rem(padding-top, 24/10);
+    @include rem(margin-left, 24/10);
+  }
+  input {
+    color: $white-rgba;
+    font-weight: 700;
+  }
+}
+
+@mixin vertical-align {
+  position: relative;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+  -ms-transform: translateY(-50%);
+  transform: translateY(-50%);
+}
+
+// For image replacement
+
+@mixin hide-text() {
+text-indent : 100%;
+white-space : nowrap;
+overflow : hidden; }
+
+// Hide from visual and speaking browsers
+
+@mixin hide() {
+  position: absolute !important;
+  top: -9999px !important;
+  left: -9999px !important;
+}
+
+@mixin hidden() {
+display : none !important;
+visibility : hidden; 
+}
+
+// Hide but maintain layout
+
+@mixin invisible() {
+visibility : hidden; }
+
+// @include resize(VALUE) (none, both, horizontal, vertical, inherit)
+
+@mixin resize($direction: both) {
+resize : $direction;
+overflow : auto; }
+
+// @include userselect(VALUE) (all, element, none, text)
+
+@mixin user-select($select) {
+-webkit-user-select : $select;
+-moz-user-select : $select;
+-o-user-select : $select;
+user-select : $select; }
+
+// Hidden but available to speaking browsers
+
+@mixin visuallyhidden() {
+overflow : hidden;
+position : absolute;
+clip : rect(0 0 0 0);
+height : 1px;
+width : 1px;
+margin : -1px;
+padding : 0;
+border : 0;
+// Make visuallyhidden focusable with a keyboard
+
+&.focusable {
+
+&:active,
+&:focus {
+position : static;
+clip : auto;
+height : auto;
+width : auto;
+margin : 0;
+overflow: visible; } } }

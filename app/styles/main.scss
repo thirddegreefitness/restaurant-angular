@@ -1,0 +1,39 @@
+/*// Normalize & CSS Reset*/
+
+@import "css/partials/normalize";
+@import "css/partials/reset";
+
+/*// Variables and mixins*/
+
+@import "css/partials/variables";
+@import "css/partials/mixins";
+@import "css/partials/fonts";
+@import "css/partials/animate";
+
+@import "css/default";
+@import "css/component";
+
+$icon-font-path: "../bower_components/bootstrap-sass-official/vendor/assets/fonts/bootstrap/";
+// bower:scss
+@import "bootstrap-sass-official/vendor/assets/stylesheets/bootstrap.scss";
+// endbower
+
+.form__container {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-color: #f17a6e;
+
+}
+
+.form__index {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  color: #ecf0f1;
+  text-align: center;
+  padding: 2.5%;
+  @include flexbox-center();
+}
+
+
