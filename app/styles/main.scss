@@ -15,8 +15,12 @@
 
 $icon-font-path: "../bower_components/bootstrap-sass-official/vendor/assets/fonts/bootstrap/";
 // bower:scss
-@import "bootstrap-sass-official/vendor/assets/stylesheets/bootstrap.scss";
+// @import "bootstrap-sass-official/vendor/assets/stylesheets/bootstrap.scss";
 // endbower
+
+body {
+  font-family: 'Open Sans', sans-serif;
+}
 
 .form__container {
   position: absolute;
