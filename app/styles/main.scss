@@ -7,7 +7,7 @@
 
 @import "css/partials/variables";
 @import "css/partials/mixins";
-@import "css/partials/fonts";
+// @import "css/partials/fonts";
 @import "css/partials/animate";
 
 @import "css/default";
@@ -15,7 +15,7 @@
 
 $icon-font-path: "../bower_components/bootstrap-sass-official/vendor/assets/fonts/bootstrap/";
 // bower:scss
-// @import "bootstrap-sass-official/vendor/assets/stylesheets/bootstrap.scss";
+@import "bootstrap-sass-official/vendor/assets/stylesheets/bootstrap.scss";
 // endbower
 
 body {
