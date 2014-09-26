@@ -1,7 +1,7 @@
-<!-- <div class="form__container">
+<div class="form__container">
     <div class="form__index clearfix animated zoomIn">
         <form id="nl-form" class="nl-form">
-            I want to eat 
+            I want to eat {{todos}}
             <select>
                 <option value="1" selected>any food</option>
                 <option value="2">Indian</option>
@@ -31,8 +31,8 @@
 <script>
 var nlform = new NLForm(document.getElementById('nl-form'));
 </script>
- -->
-<div ng-controller="FetchController">
+
+<!-- <div ng-controller="FetchController">
 <select ng-model="method">
   <option>GET</option>
   <option>JSONP</option>
@@ -51,4 +51,4 @@ var nlform = new NLForm(document.getElementById('nl-form'));
   </button>
 <pre>http status code: {{status}}</pre>
 <pre>http response data: {{data}}</pre>
-</div>
+</div> -->
