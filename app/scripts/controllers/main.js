@@ -3,11 +3,11 @@
 angular.module('restaurantApp')
     .controller('MainCtrl', function($http, $scope, $window) {
 
-function randomString(length, chars) {
-     var result = '';
-     for (var i = length; i > 0; --i) result += chars[Math.round(Math.random() * (chars.length - 1))];
-     return result;
- }
+        function randomString(length, chars) {
+            var result = '';
+            for (var i = length; i > 0; --i) result += chars[Math.round(Math.random() * (chars.length - 1))];
+            return result;
+        }
 
         $http({
             url: 'http://api.yelp.com/v2/business/yelp-san-francisco',
@@ -26,13 +26,15 @@ function randomString(length, chars) {
     });
 
 
+
+
 // angular.module('restaurantApp')
 //     .controller('MainCtrl', function($http, $scope, $window) {
 
 //         $http({
 //             url: 'http://coinabul.com/api.php',
 //             method: "GET"
-          
+
 //         }).then(function(json) {
 //             var item = json[Math.floor(Math.random()*json.length)];
 //             $scope.yelpApi = json;
